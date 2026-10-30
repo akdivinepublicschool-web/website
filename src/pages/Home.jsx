@@ -1,5 +1,6 @@
 import Hero from '../components/home/Hero'
 import AboutSchool from '../components/home/AboutSchool'
+import DirectorMessage from '../components/home/DirectorMessage'
 import AcademicPrograms from '../components/home/AcademicPrograms'
 import AdmissionsSection from '../components/home/AdmissionsSection'
 import FacilitiesSection from '../components/home/FacilitiesSection'
@@ -11,6 +12,7 @@ export default function Home() {
     <>
       <Hero />
       <AboutSchool />
+      <DirectorMessage />
       <AcademicPrograms />
       <AdmissionsSection />
       <FacilitiesSection />

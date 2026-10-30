@@ -1,4 +1,4 @@
-import { Clock, Mail, MapPin, Phone } from 'lucide-react'
+import { Clock, LogIn, Mail, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Container from './Container'
 import schoolLogo from '../../assets/AKDivinePublicSchoolLogo.png'
@@ -10,6 +10,7 @@ const quickLinks = [
   { label: 'Academics', to: '/academics' },
   { label: 'Admissions', to: '/admissions' },
   { label: 'Facilities', to: '/facilities' },
+  { label: 'Fee Structure', to: '/fee-structure' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Contact', to: '/contact' },
 ]
@@ -76,7 +77,7 @@ export default function Footer() {
               An English Medium School committed to providing quality education, moral values and a bright future for every child.
             </p>
 
-            <div className="mt-5 flex items-center gap-2.5">
+            <div className="mt-5 flex flex-wrap items-center gap-2.5">
               {socialLinks.map(({ label, href, icon: Icon }) => (
                 <a
                   key={label}
@@ -88,6 +89,17 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+
+            <a
+              href="https://erp.akdivinepublicschool.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open school ERP login in a new tab"
+              className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 text-sm font-bold text-white shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:bg-white/15 hover:text-[var(--color-accent)] hover:shadow-lg"
+            >
+              <LogIn size={17} strokeWidth={2.2} />
+              ERP Login
+            </a>
           </div>
 
           <div data-reveal style={{ '--reveal-delay': '60ms' }}>

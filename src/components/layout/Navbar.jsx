@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { ArrowRight, Menu, X } from 'lucide-react'
+import { ArrowRight, LogIn, Menu, X } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import Container from './Container'
 import schoolLogo from '../../assets/AKDivinePublicSchoolLogo.png'
@@ -11,13 +11,14 @@ const navItems = [
   { label: 'Academics', to: '/academics' },
   { label: 'Admissions', to: '/admissions' },
   { label: 'Facilities', to: '/facilities' },
+  { label: 'Fee Structure', to: '/fee-structure' },
   { label: 'Gallery', to: '/gallery' },
   { label: 'Contact', to: '/contact' },
 ]
 
 const desktopLinkClass = ({ isActive }) =>
   [
-    'relative px-2.5 py-3 text-[13px] font-semibold text-[var(--color-primary)] transition-colors xl:px-3 xl:text-sm',
+    'relative whitespace-nowrap px-1 py-3 text-[12px] font-semibold text-[var(--color-primary)] transition-colors xl:px-1.5 xl:text-[13px] 2xl:px-2 2xl:text-[14px]',
     'after:absolute after:bottom-1 after:left-1/2 after:h-0.5 after:-translate-x-1/2 after:rounded-full after:bg-[var(--color-accent)] after:transition-all after:duration-200',
     isActive
       ? 'after:w-7'
@@ -134,7 +135,7 @@ export default function Navbar() {
           </div>
         </NavLink>
 
-        <div className="hidden min-w-0 items-center gap-2 lg:flex xl:gap-4">
+        <div className="hidden min-w-0 items-center gap-1 lg:flex xl:gap-1.5 2xl:gap-3">
           <nav className="flex items-center" aria-label="Primary navigation">
             {navItems.map((item) => (
               <NavLink key={item.to} to={item.to} className={desktopLinkClass} end={item.to === '/'}>
@@ -143,9 +144,20 @@ export default function Navbar() {
             ))}
           </nav>
 
+          <a
+            href="https://erp.akdivinepublicschool.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open school ERP login in a new tab"
+            className="inline-flex min-h-9 shrink-0 items-center gap-1 rounded-lg border border-[var(--color-primary)]/20 bg-[var(--color-bg-soft)] px-2 text-[11px] font-bold text-[var(--color-primary)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[var(--color-accent)] hover:bg-white hover:shadow-md xl:min-h-10 xl:gap-1.5 xl:px-2.5 xl:text-xs 2xl:px-3.5 2xl:text-[13px]"
+          >
+            <LogIn size={15} strokeWidth={2.2} />
+            ERP Login
+          </a>
+
           <NavLink
             to="/admissions"
-            className="btn-accent inline-flex min-h-10 shrink-0 items-center gap-1.5 px-3.5 text-[13px] xl:px-4"
+            className="btn-accent inline-flex min-h-9 shrink-0 items-center gap-1 px-2 text-[11px] xl:min-h-10 xl:gap-1.5 xl:px-2.5 xl:text-xs 2xl:px-4 2xl:text-[13px]"
           >
             Admission Enquiry
             <ArrowRight size={15} strokeWidth={2.25} />
@@ -191,6 +203,17 @@ export default function Navbar() {
               Admission Enquiry
               <ArrowRight size={16} strokeWidth={2.25} />
             </NavLink>
+
+            <a
+              href="https://erp.akdivinepublicschool.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open school ERP login in a new tab"
+              className="mt-2 inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--color-primary)]/20 bg-[var(--color-bg-soft)] px-4 text-sm font-bold text-[var(--color-primary)] transition-colors hover:border-[var(--color-accent)] hover:bg-white"
+            >
+              <LogIn size={17} strokeWidth={2.2} />
+              ERP Login
+            </a>
           </Container>
         </nav>
       )}
